@@ -1,16 +1,43 @@
-.header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: #f8f9fa;
-}
+
 body {
     background-color: #e4e4fb;
     font-family: "Segoe UI", sans-serif;
-    
+    /* overflow: hidden;
+    height: 100vh; */
   }
+
+
+/*  Start index.html file css part iframe  */
+.custom-iframe {
+    width: 100%;
+    min-height: 600px;
+}
+
+.iframe-wrapper {
+
+overflow: auto;
+scrollbar-width: none; /* For Firefox */
+    
+
+/* ---Hide Scroll bar --- */  
+/* Firefox */
+    scrollbar-width: none;
+    
+/* Internet Explorer Edge */
+    -ms-overflow-style: none;
+
+    
+}
+
+/* Hide scrollbar for Chrome, Edge, and Safari */
+.iframe-wrapper::-webkit-scrollbar {
+    display: none;
+    
+}
+
+
+/*  End index.html file css part iframe  */
+
 
 .logo-section {
     display: flex;
@@ -206,20 +233,20 @@ body {
     margin-top: 5rem;
 }
 
-/* Form Area and Footer Area - HADAPU KRAME */
+/* Form Area and Footer Area */
 .form-area {
-    border-radius: 16px;
     transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out; 
     margin:0 auto; 
     width: calc(100% - 50px);
-    margin-left: 20px;
+    margin-left: 25px;
+    top: 113px !important;
     
 }
 
 .form-area.shifted {
     margin-left: calc(320px + 0px); 
     margin-right: 20px;
-    width: calc(100% - 300px);
+    width: calc(100% - 320px);
 }
 
 .footer-area {
@@ -251,10 +278,23 @@ body {
     width: 320px; 
     transition: max-height 0.3s ease;
     left:0;
+
+/* ---Hide Scroll bar --- */  
+/* Firefox */
+    scrollbar-width: none;
+    
+/* Internet Explorer Edge */
+    -ms-overflow-style: none;
 }
 
+/* Chrome, Safari  */
+#sidebar-content::-webkit-scrollbar {
+    display: none;
+}
+
+
 #sidebar-content:not(.active) {
-    margin-top: 20px;
+    margin-top: 0px;
     width: 50px !important; 
     padding: 1rem 0.5rem !important;
     left:0;
