@@ -7,14 +7,9 @@
         }
 
         body {
-            background-color: var(--gray-bg);
+            background-color: #e4e4fb;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
+            
         }
 
         .page-container {

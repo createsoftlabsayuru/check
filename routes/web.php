@@ -40,9 +40,9 @@ Route::get('/admin-main', function () {
  Route::get('/admin-allProduct',function(){
     return view('admin.layouts.allProduct');
  });
-//  Route::get('/admin-binBlog',function(){
-//     return view('admin.layouts.binBlog');
-//  });
+ Route::get('/admin-binBlog',function(){
+    return view('admin.layouts.binBlog');
+ });
  Route::get('/admin-binEvent',function(){
     return view('admin.layouts.binEvent');
  });
@@ -56,6 +56,12 @@ Route::get('/admin-main', function () {
  Route::get('/admin-draftBlog',function(){
     return view('admin.layouts.draftBlog');
  });
+
+ Route::get('admin-blogTag',function(){
+    return view('admin.layouts.blogTag');
+ });
+
+
  Route::get('/admin-draftEvent',function(){
     return view('admin.layouts.draftEvent');
  });
@@ -101,23 +107,6 @@ Route::get('/admin-main', function () {
  Route::get('/admin-user-profile',function(){
     return view('admin.layouts.user-profile');
  });
- Route::get('/load-footer', function () {
-    return view('admin.partials.footer');
-});
-Route::get('/load-navbar', function () {
-    return view('admin.partials.navbar');
-});
-Route::get('/load-sidebar', function () {
-    return view('admin.partials.sidebar');
-});
-Route::get('/load-login-modal', function () {
-    return view('admin.partials.login-modal');
-});
-
-
-
-
-
  
  Route::get('/admin-blogPost', [BlogController::class, 'showPosts'])->name('blog.index');
 Route::get('/admin-draftBlog', [BlogController::class, 'showDrafts'])->name('blog.drafts');
@@ -171,6 +160,3 @@ Route::post('/blog/store', [BlogController::class, 'store'])->name('blog.store')
 
 Route::post('/blog/delete/{id}', [BlogController::class, 'delete'])->name('blog.delete');
 Route::post('/blog/restore/{id}', [BlogController::class, 'restore'])->name('blog.restore');
-Route::get('/admin-binBlog', [BlogController::class, 'showBin'])->name('blog.bin');
-Route::get('/blog/edit/{id}', [BlogController::class, 'edit'])->name('blog.edit');
-Route::post('/blog/update/{id}', [BlogController::class, 'update'])->name('blog.update');

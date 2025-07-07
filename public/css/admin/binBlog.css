@@ -7,16 +7,14 @@
         }
 
         body {
-            background-color: var(--gray-bg);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
+            background-color: #e4e4fb;
+            font-family: "Segoe UI", sans-serif;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+          }
 
         /* Header Styles */
         .header {
@@ -114,34 +112,7 @@
         .user-info small {
             opacity: 0.8;
         }
-
-        .menu-item {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            margin: 0.2rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .menu-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        .menu-item.active {
-            background: var(--yellow-accent);
-            color: #333;
-            font-weight: 600;
-        }
-
-        .menu-item i {
-            width: 20px;
-            margin-right: 0.5rem;
-        }
-
+        
         /* Main Content */
         .main-content {
             margin: 0;
@@ -155,7 +126,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             padding-bottom: 1rem;
             border-bottom: 3px solid var(--primary-blue);
             text-align: left;

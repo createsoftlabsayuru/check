@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LankaBuy Responsive</title>
 
-  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -65,9 +64,33 @@
                     <button onclick="loadAddPost()">Add new post</button>
                     <button onclick="loadAddnewjob()">Add new job</button>
                     <button onclick="loadAddnewproduct()">Add new product</button>
-                    <button onclick="loadAddnewevent()">Add new event</button>
-                    <button onclick="loadAddneweblog()">Add new blog</button>
                     
+                    </div>
+
+                    <!-- Blog -->
+                    <button class="menu-item toggle-submenu mt-2" type="button" aria-expanded="false" aria-controls="submenu-leads">
+                    <img src="{{asset('images/blog-icon.png') }}" alt="Blog" class="menu-logo" />
+                    <span>Blog</span>
+                    <i class="bi bi-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="submenu" id="submenu-leads" role="region" aria-hidden="true">
+                        <button onclick="loadAddneweblog()">Add new blog</button>
+                        <button onclick="loadblogDetails()">Blog Details</button>
+                        <button onclick="loadDraftBlog()">Blog Draft</button>
+                        <button onclick="loadbinBlog()">Blog Bin</button>
+                        <button onclick="loadblogTag()">Blog Tag</button>
+                    </div>
+
+                    <!-- Event -->
+                    <button class="menu-item toggle-submenu mt-2" type="button" aria-expanded="false" aria-controls="submenu-leads">
+                    <img src="{{asset('images/event-icon.png') }}" alt="Event" class="menu-logo" />
+                    <span>Event</span>
+                    <i class="bi bi-chevron-down dropdown-icon"></i>
+                    </button>
+                    <div class="submenu" id="submenu-leads" role="region" aria-hidden="true">
+                        <button onclick="loadAddnewevent()">Add new event</button>
+                        <button onclick="loadDraftEvent()">Draft Event</button>
+                        <button onclick="loadbinEvent()">Bin Event</button>
                     </div>
 
                     <!-- Leads & Enquiry -->
@@ -123,31 +146,19 @@
                 <!-- Main Form Area -->
                 
                 <main class="col-12 p-4 form-area" id="form-area">
-                     @include('admin.layouts.dashboard')
-                </main>
-                
+                     </main>      
             </div>
         </div>
     </div>
 
 
      
-
-
    <div id="footer" class="footer-area">
          @include('admin.partials.footer')
          
     </div>
   
 
-
-     
-        
-  
-
-
-    
-  
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -166,11 +177,7 @@
 
             // onload time dasboard dispaly
             loadDashboard(); 
-       
-
-
-           
-
+ 
             // Initialize sidebar state on page load
 
             if (sidebar.classList.contains("active")) {
@@ -556,46 +563,8 @@
                 console.error("Error loading content:", error);
                 });
             }
-            function loadAddnewevent(){
-                fetch("/admin-add-event")
-                .then(response => {
-                    if (!response.ok) throw new Error("Network response was not ok");
-                    return response.text();
-                })
-                .then(data => {
-                    const formArea = document.getElementById("form-area");
-                    //  Create a temporary container to extract scripts
-                    const tempDiv = document.createElement("div");
-                    tempDiv.innerHTML = data;
 
-                    //  Extract scripts separately and remove other script
-                    const scripts = tempDiv.querySelectorAll("script");
-                    scripts.forEach(script => script.remove());
-
-                    //  Then set HTML content without scripts and anmation set
-                    formArea.innerHTML = tempDiv.innerHTML;
-                    formArea.classList.remove("fade-in");
-                    void formArea.offsetWidth; 
-                    formArea.classList.add("fade-in");
-
-                    //  Append and execute scripts
-                    scripts.forEach(oldScript => {
-                        const newScript = document.createElement("script");
-
-                        // If it's an external script
-                        if (oldScript.src) {
-                            newScript.src = oldScript.src;
-                        } else {
-                            newScript.textContent = oldScript.textContent;
-                        }
-
-                        document.body.appendChild(newScript); // attach to body to execute
-                    });
-                })
-                .catch(error => {
-                console.error("Error loading content:", error);
-                });
-            }
+            /*  blog menu */
             function loadAddneweblog(){
                 fetch("/admin-add-blog")
                 .then(response => {
@@ -604,42 +573,352 @@
                 })
                 .then(data => {
                     const formArea = document.getElementById("form-area");
-                    //  Create a temporary container to extract scripts
+
+                    // Create a temporary container to extract HTML and scripts
                     const tempDiv = document.createElement("div");
                     tempDiv.innerHTML = data;
 
-                    //  Extract scripts separately and remove other script
+                    // Extract scripts and remove them from HTML content
                     const scripts = tempDiv.querySelectorAll("script");
                     scripts.forEach(script => script.remove());
 
-                    //  Then set HTML content without scripts and anmation set
+                    // Inject the cleaned HTML
                     formArea.innerHTML = tempDiv.innerHTML;
                     formArea.classList.remove("fade-in");
-                    void formArea.offsetWidth; 
+                    void formArea.offsetWidth; // reflow for animation
                     formArea.classList.add("fade-in");
 
-                    //  Append and execute scripts
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
                     scripts.forEach(oldScript => {
                         const newScript = document.createElement("script");
 
-                        // If it's an external script
                         if (oldScript.src) {
-                            newScript.src = oldScript.src;
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
                         } else {
-                            newScript.textContent = oldScript.textContent;
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
                         }
-
-                        document.body.appendChild(newScript); // attach to body to execute
                     });
                 })
                 .catch(error => {
-                console.error("Error loading content:", error);
+                    console.error("Error loading content:", error);
                 });
             }
+            function loadDraftBlog(){
+                fetch("/admin-draftBlog")
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    const formArea = document.getElementById("form-area");
 
+                    // Create a temporary container to extract HTML and scripts
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = data;
 
-           
+                    // Extract scripts and remove them from HTML content
+                    const scripts = tempDiv.querySelectorAll("script");
+                    scripts.forEach(script => script.remove());
 
+                    // Inject the cleaned HTML
+                    formArea.innerHTML = tempDiv.innerHTML;
+                    formArea.classList.remove("fade-in");
+                    void formArea.offsetWidth; // reflow for animation
+                    formArea.classList.add("fade-in");
+
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+
+                        if (oldScript.src) {
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
+                        } else {
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+            }
+            function loadblogDetails(){
+                fetch("/admin-blogPost")
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    const formArea = document.getElementById("form-area");
+
+                    // Create a temporary container to extract HTML and scripts
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = data;
+
+                    // Extract scripts and remove them from HTML content
+                    const scripts = tempDiv.querySelectorAll("script");
+                    scripts.forEach(script => script.remove());
+
+                    // Inject the cleaned HTML
+                    formArea.innerHTML = tempDiv.innerHTML;
+                    formArea.classList.remove("fade-in");
+                    void formArea.offsetWidth; // reflow for animation
+                    formArea.classList.add("fade-in");
+
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+
+                        if (oldScript.src) {
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
+                        } else {
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+            }
+            function loadbinBlog(){
+                fetch("/admin-binBlog")
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    const formArea = document.getElementById("form-area");
+
+                    // Create a temporary container to extract HTML and scripts
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = data;
+
+                    // Extract scripts and remove them from HTML content
+                    const scripts = tempDiv.querySelectorAll("script");
+                    scripts.forEach(script => script.remove());
+
+                    // Inject the cleaned HTML
+                    formArea.innerHTML = tempDiv.innerHTML;
+                    formArea.classList.remove("fade-in");
+                    void formArea.offsetWidth; // reflow for animation
+                    formArea.classList.add("fade-in");
+
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+
+                        if (oldScript.src) {
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
+                        } else {
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+            }
+            function loadblogTag(){
+                fetch("/admin-blogTag")
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    const formArea = document.getElementById("form-area");
+
+                    // Create a temporary container to extract HTML and scripts
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = data;
+
+                    // Extract scripts and remove them from HTML content
+                    const scripts = tempDiv.querySelectorAll("script");
+                    scripts.forEach(script => script.remove());
+
+                    // Inject the cleaned HTML
+                    formArea.innerHTML = tempDiv.innerHTML;
+                    formArea.classList.remove("fade-in");
+                    void formArea.offsetWidth; // reflow for animation
+                    formArea.classList.add("fade-in");
+
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+
+                        if (oldScript.src) {
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
+                        } else {
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+            }
+            
+             /* Event menu */
+            function loadAddnewevent(){
+                fetch("/admin-add-event")
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    const formArea = document.getElementById("form-area");
+
+                    // Create a temporary container to extract HTML and scripts
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = data;
+
+                    // Extract scripts and remove them from HTML content
+                    const scripts = tempDiv.querySelectorAll("script");
+                    scripts.forEach(script => script.remove());
+
+                    // Inject the cleaned HTML
+                    formArea.innerHTML = tempDiv.innerHTML;
+                    formArea.classList.remove("fade-in");
+                    void formArea.offsetWidth; // reflow for animation
+                    formArea.classList.add("fade-in");
+
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+
+                        if (oldScript.src) {
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
+                        } else {
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+            }
+            function loadDraftEvent(){
+                fetch("/admin-draftEvent")
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    const formArea = document.getElementById("form-area");
+
+                    // Create a temporary container to extract HTML and scripts
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = data;
+
+                    // Extract scripts and remove them from HTML content
+                    const scripts = tempDiv.querySelectorAll("script");
+                    scripts.forEach(script => script.remove());
+
+                    // Inject the cleaned HTML
+                    formArea.innerHTML = tempDiv.innerHTML;
+                    formArea.classList.remove("fade-in");
+                    void formArea.offsetWidth; // reflow for animation
+                    formArea.classList.add("fade-in");
+
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+
+                        if (oldScript.src) {
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
+                        } else {
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+            }
+            function loadbinEvent(){
+                fetch("/admin-binEvent")
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    const formArea = document.getElementById("form-area");
+
+                    // Create a temporary container to extract HTML and scripts
+                    const tempDiv = document.createElement("div");
+                    tempDiv.innerHTML = data;
+
+                    // Extract scripts and remove them from HTML content
+                    const scripts = tempDiv.querySelectorAll("script");
+                    scripts.forEach(script => script.remove());
+
+                    // Inject the cleaned HTML
+                    formArea.innerHTML = tempDiv.innerHTML;
+                    formArea.classList.remove("fade-in");
+                    void formArea.offsetWidth; // reflow for animation
+                    formArea.classList.add("fade-in");
+
+                    // Execute scripts safely (use IIFE-wrapped scripts in the HTML)
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+
+                        if (oldScript.src) {
+                            // Avoid appending duplicate external scripts
+                            if (!document.querySelector(`script[src="${oldScript.src}"]`)) {
+                                newScript.src = oldScript.src;
+                                document.body.appendChild(newScript);
+                            }
+                        } else {
+                            // Inline script — wrapped in local scope via IIFE
+                            newScript.textContent = `(function(){\n${oldScript.textContent}\n})();`;
+                            document.body.appendChild(newScript);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+            }
 
 
             
