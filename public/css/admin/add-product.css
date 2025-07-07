@@ -1,0 +1,317 @@
+body {
+  background-color: #e4e4fb;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.form-container {
+  position: relative;
+  background: #fff;
+  padding: 3rem 4rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 4rem auto;
+  border: 1px solid #888;
+}
+
+.form-container .bck {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+
+.form-container h5 {
+  font-weight: bold;
+}
+
+.floating-label {
+  position: relative;
+}
+
+.floating-label input,
+.floating-label textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+.floating-label label {
+  position: absolute;
+  top: -10px;
+  left: 14px;
+  background: #fff;
+  padding: 0 6px;
+  font-size: 16px;
+  color: #333;
+}
+
+.border-box {
+  border: 1px solid #999;
+  border-radius: 10px;
+  padding: 30px 20px;
+  background-color: #ffffff;
+}
+
+.upload-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.upload-item {
+  border: 1.5px dashed #888;
+  border-radius: 10px;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.upload-item.add {
+  background-color: #ffeb3b;
+  border: none;
+}
+
+.upload-item img {
+  width: 24px;
+}
+
+.upload-item span {
+  font-size: 12px;
+  color: #666;
+}
+
+.color-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid #333;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* For buttons inline with color-box: */
+button,
+.btn {
+  vertical-align: middle;
+}
+
+.remove-color {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.size-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 36px;
+  border: 1px solid #333;
+  padding: 6px 14px;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
+
+.size-btn.active {
+  background-color: #414bd2;
+  color: #fff;
+  border-color: #414bd2;
+}
+
+.underline-heading {
+  border-bottom: 3px solid #414bd2;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.op {
+  display: inline-block;
+  width: 120px;
+}
+
+.quill-wrapper {
+  border: 1px solid #888;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-top: 10px;
+  position: relative;
+  background: #fff;
+}
+
+.quill-label {
+  position: absolute;
+  top: -0.6rem;
+  left: 1rem;
+  background: #fff;
+  padding: 0 6px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2;
+  color: #333;
+}
+
+.quill-wrapper .ql-toolbar {
+  border: 1px solid #888;
+  margin: 10px;
+  margin-top: 20px;
+  border-radius: 1rem;
+  padding: 5px 10px;
+}
+
+.quill-wrapper .ql-container {
+  border: none !important;
+  font-size: 16px;
+  min-height: 150px;
+  padding: 10px;
+}
+
+.ql-editor {
+  padding: 10px;
+  min-height: 100px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+#uploadAdInput {
+  display: none;
+}
+
+.up-img {
+  border-style: dashed;
+}
+
+#adPreview {
+  border: 1px solid #ccc;
+  padding: 4px;
+  background-color: #f8f9fa;
+}
+
+#previewContainer img {
+  object-fit: cover;
+  background-color: #f8f9fa;
+}
+
+.floating-label-static {
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background: #fff;
+  padding: 0 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.btn-primary-custom {
+  background-color: #414BD2;
+}
+
+.btn-primary-custom:hover {
+  background-color: #333ec2;
+}
+
+.btn-secondary-custom {
+  background-color: #74757c;
+}
+
+.btn-secondary-custom:hover {
+  background-color: #515156;
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1rem;
+    margin: 1rem 0.5rem;
+    width: 100%;
+    box-shadow: none;
+    border-radius: 8px;
+  }
+
+  .floating-label label,
+  .floating-label-static {
+    font-size: 13px;
+    left: 10px;
+  }
+
+  .floating-label input,
+  .floating-label textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .upload-item {
+    width: 55px;
+    height: 55px;
+  }
+
+  .upload-item img {
+    width: 20px;
+  }
+
+  .upload-item span {
+    font-size: 10px;
+  }
+
+  .upload-grid {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .size-btn {
+    font-size: 13px;
+    padding: 5px 10px;
+    width: auto;
+  }
+
+  .quill-wrapper .ql-toolbar {
+    margin: 8px 4px;
+    padding: 4px;
+  }
+
+  .quill-wrapper .ql-container {
+    font-size: 14px;
+    min-height: 100px;
+  }
+
+  .btn-primary-custom,
+  .btn-secondary-custom {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .border-box {
+    padding: 20px 15px;
+  }
+}

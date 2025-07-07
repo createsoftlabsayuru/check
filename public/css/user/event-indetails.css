@@ -1,0 +1,119 @@
+body{
+  background-color: rgba(230,230,250,1);
+}
+.first-wrapper{
+  background-image: url('/images/Event_indetails_first_bg.jpg');
+   background-size: cover; 
+   background-position: center;
+    height: 500px;
+}
+
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+  color: white;                      /* Ensure white text */
+  font-weight: 600;
+   white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span1 {
+    font-size: 16px;
+  }
+}
+.btn-donate-now{
+  background-color: rgba(255,244,29,1);
+  transition: background-color 0.3s ease;
+}
+.btn-call{
+  width: 130px;
+  background-color: rgba(65, 75, 210, 1);
+  transition: background-color 0.3s ease;
+}
+.btn-get-quote{
+  width: 130px;
+  background-color: rgba(255,244,29,1);
+  transition: background-color 0.3s ease;
+}
+.btn-donate-now:hover,
+.btn-call:hover,
+.btn-get-quote:hover{
+  color: #fff;
+background: linear-gradient(90deg,rgba(65, 75, 210, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
+}
+.btn-join{
+  background-color: rgba(65,75,210,1);
+  transition: background-color 0.3s ease;
+}
+.btn-join:hover{
+  color: #fff;
+background: linear-gradient(90deg,rgba(65, 75, 210, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
+}
+
+/*start - home,about,jobs ..etc round links*/
+.circle {
+    width: 80px;
+    height: 80px;
+    transition: all 0.3s ease;
+  }
+  .circle:hover .icon-img {
+    transform: scale(1.5);
+  }
+  .circle:hover .label {
+    display: none;
+  }
+  .icon-img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  .wave-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  /*end - home,about,jobs ..etc round links*/
+ .images-gallery .image-wrapper {
+    column-count: 4;
+    column-gap: 1rem;
+  }
+  .third-container .hexagon-shaped-overlay{
+    width: 50%;
+  }
+  .placeholder-gray::placeholder {
+    color: #ccc; /* Light gray */
+    opacity: 1;  /* Ensure it's fully visible */
+  }
+
+  .go-back-btn {
+    display: inline-block;
+    color: rgba(65,75,210,1);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 5px;
+    margin-bottom: 10px;
+     border: 1px solid rgba(65,75,210,1);;
+  }
+  @media(max-width:991px){
+    .border-end{
+      display: none;
+    }
+  }
+  @media (max-width: 550px) {
+   .images-gallery .image-wrapper {
+      column-count: 2;
+      column-gap: 0.6rem;
+    }
+    .third-container .hexagon-shaped-overlay{
+        width: 80%;
+      }
+  }

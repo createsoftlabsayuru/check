@@ -1,0 +1,606 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #f8f9fa;
+}
+body {
+    background-color: #e4e4fb;
+    font-family: "Segoe UI", sans-serif;
+    
+  }
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo-main {
+    height: 20px;
+}
+
+.logo-bg {
+    height: 40px;
+}
+
+.menu-logo {
+    width: 30px; 
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 1rem;
+}
+
+.search-input {
+    flex-grow: 1;
+}
+
+.search-divider {
+    width: 1px;
+    height: 30px;
+    background-color: #ccc;
+    margin: 0 0.5rem;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.header-link,
+.header-button {
+    text-decoration: none;
+    color: #333;
+}
+
+.header-button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.login-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.signup-button {
+    background-color: #28a745;
+    color: white;
+}
+
+
+.sidebar {
+    height: 100%;
+
+}
+
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.notification-icon {
+    width: 24px;
+}
+
+
+.menu-item {
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    transition: background 0.3s, color 0.3s, transform 0.3s, width 0.3s, padding 0.3s, margin 0.3s; 
+    margin: 0px 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    gap: 10px; 
+    width: calc(100% - 20px);
+    border: none; 
+}
+
+
+.menu-label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    cursor: default;
+    gap: 10px;
+    border-radius: 12px; 
+    margin: 0px 10px; 
+    width: calc(100% - 20px); 
+    transition: background 0.3s, color 0.3s, transform 0.3s, width 0.3s, padding 0.3s, margin 0.3s;
+}
+
+/* Icons within menu-label (for expanded state) */
+.menu-label img.menu-logo {
+    width: 20px;
+    height: 20px;
+    transition: width 0.3s, height 0.3s;
+}
+
+/* Active Menu Item Styling */
+.menu-item.active {
+    background-color: #f4cd1e !important; 
+    background-image: none !important;
+    color: #000 !important;
+}
+
+.menu-item span {
+    flex-grow: 1;
+    transition: opacity 0.3s ease, width 0.3s ease, margin 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.menu-item img.menu-logo {
+    width: 20px;
+    height: 20px;
+    transition: width 0.3s, height 0.3s;
+    margin-right: 0 !important; 
+}
+
+
+.menu-item .dropdown-icon {
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-item.active .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+
+.submenu {
+    display: flex; 
+    flex-direction: column;
+    padding-left: 2rem; 
+    max-height: 0; 
+    opacity: 0;
+    overflow: hidden; 
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.submenu button {
+    background: none;
+    border: none;
+    color: #495057;
+    padding: 0.4rem 0;
+    text-align: left;
+    width: 100%;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 4px;
+}
+
+.submenu button:hover {
+    background-color: #e9ecef;
+    color: #0d6efd;
+}
+
+.submenu.show {
+    max-height: 500px; 
+    opacity: 1;
+}
+
+.main-container {
+    margin-top: 5rem;
+}
+
+/* Form Area and Footer Area - HADAPU KRAME */
+.form-area {
+    border-radius: 16px;
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out; 
+    margin:0 auto; 
+    width: calc(100% - 50px);
+    margin-left: 20px;
+    
+}
+
+.form-area.shifted {
+    margin-left: calc(320px + 0px); 
+    margin-right: 20px;
+    width: calc(100% - 300px);
+}
+
+.footer-area {
+    margin-left: 50px; 
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out; 
+    width: calc(100% - 0px);
+}
+
+.footer-area.shifted {
+    margin-left: calc(320px + 0px); 
+    width: calc(100% - 320px);
+}
+
+/* --- Form Area and Footer Area gide end --- */
+
+/* --- Sidebar Specific Styling --- */
+
+/* Base Sidebar Container */
+#sidebar-content {
+    position: fixed;
+    top: 113px;
+    height: calc(100vh - 113px);
+    background-color: #f8f9fa;
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out; 
+    z-index: 1051;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: nowrap; 
+    width: 320px; 
+    transition: max-height 0.3s ease;
+    left:0;
+}
+
+#sidebar-content:not(.active) {
+    margin-top: 20px;
+    width: 50px !important; 
+    padding: 1rem 0.5rem !important;
+    left:0;
+}
+
+
+#sidebar-content.active {
+    width: 320px; 
+    padding: 1rem; 
+}
+
+
+/* **Hide the entire user profile section when sidebar is collapsed** */
+#sidebar-content:not(.active) .user-profile {
+    display: none !important; 
+    opacity: 0; 
+    visibility: hidden; 
+    height: 0; 
+    margin: 0 !important;
+    padding: 0 !important; 
+    transition: all 0.3s ease-out; 
+}
+
+
+#sidebar-content:not(.active) .menu-logo {
+    width: 32px; 
+    height: 32px;
+    flex-shrink: 0; 
+    object-fit: contain; 
+    margin-right: 0 !important; 
+}
+
+/* Hide menu text */
+#sidebar-content:not(.active) .menu-item span {
+    display: none !important; /* Hide menu item text completely */
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    width: 0;
+    margin-left: 0; 
+    overflow: hidden;
+}
+
+#sidebar-content:not(.active) .dropdown-icon {
+    display: none !important; 
+}
+
+/* --- Button Border Removal & Alignment in Collapsed State --- */
+#sidebar-content:not(.active) .menu-item {
+    border: none !important; 
+    background: none !important; 
+    color: #000 !important;
+    justify-content: center; 
+    padding: 10px 0px !important; 
+    width: auto !important; 
+    margin: 0px !important; 
+}
+
+/* Remove background from submenu buttons when sidebar is collapsed */
+.submenu button {
+    background: none;
+    border: none; /* Ensure no default border for submenu buttons in expanded state */
+    color: #495057;
+    padding: 0.4rem 0;
+    text-align: left;
+    width: 100%;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 4px;
+}
+
+#sidebar-content:not(.active) .submenu button {
+    display: none !important; /* Hide submenu buttons completely when collapsed */
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Submenu container adjustments */
+.submenu {
+    max-height: 0;
+    opacity: 0; 
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
+    padding-left: 2rem; 
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+}
+
+#sidebar-content:not(.active) .submenu {
+    padding-left: 0 !important; 
+    max-height: 0 !important; 
+    opacity: 0 !important; 
+    display: none !important; 
+}
+
+.submenu button:hover {
+    background-color: #e9ecef;
+    color: #0d6efd;
+}
+
+.submenu.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+
+
+
+/* Dashboard Label Section */
+#sidebar-content:not(.active) .menu-label {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    padding: 10px 0px !important; 
+    width: auto !important; 
+    margin: 0px !important; 
+    background: none !important; 
+    border-radius: 0 !important; 
+}
+
+/* --- Sidebar Hover Auto-Expand Functionality --- */
+
+#sidebar-content:not(.active):hover {
+    width: 320px; 
+    padding: 1rem; 
+    overflow-x: hidden; 
+}
+
+/* Shift form area on hover too */
+body:has(#sidebar-content:not(.active):hover) .form-area {
+    margin-left: 320px;
+}
+
+/* **Show the user profile section on hover when sidebar is collapsed** */
+#sidebar-content:not(.active):hover .user-profile {
+    display: flex !important; 
+    opacity: 1 !important;
+    visibility: visible !important; 
+    height: auto !important; 
+    margin-bottom: 1.5rem !important; 
+    margin-top: 1rem !important; 
+    flex-direction: row !important; 
+    align-items: center !important;
+    justify-content: flex-start !important;
+}
+
+
+
+/* Show menu text on hover when collapsed */
+#sidebar-content:not(.active):hover .menu-item span {
+    display: inline-block !important; 
+    opacity: 1;
+    pointer-events: auto;
+    user-select: auto;
+    width: auto;
+    margin-left: 0px;
+}
+
+/* Show hidden elements on hover when collapsed */
+#sidebar-content:not(.active):hover .menu-label span,
+#sidebar-content:not(.active):hover .dropdown-icon {
+    display: flex !important; 
+    opacity: 1 !important; 
+    width: auto !important; 
+    margin-left: initial !important; 
+}
+
+#sidebar-content:not(.active):hover .menu-item {
+    background: linear-gradient(90deg, #007bff, #00d4ff) !important; /* Restore gradient */
+    color: #fff !important; 
+    justify-content: flex-start !important; 
+    padding: 0px 0px !important; 
+    width: calc(100% - 20px) !important; 
+    margin: 0px 10px !important; 
+    border-radius: 12px !important; 
+    gap: 10px !important; 
+}
+
+#sidebar-content:not(.active):hover .menu-item img.menu-logo {
+    width: 20px !important; 
+    height: 20px !important;
+    margin-right: 0 !important; 
+}
+
+/* Restore submenu button styles on hover when collapsed */
+#sidebar-content:not(.active):hover .submenu button {
+    display: block !important; 
+    text-align: left !important; 
+    padding: 0.4rem 0 !important; 
+    background: none !important; 
+    color: #495057 !important; 
+}
+
+#sidebar-content:not(.active):hover .submenu {
+    display: flex !important; /* Show submenu container */
+    padding-left: 2rem !important; /* Restore original padding */
+    max-height: 500px !important; /* Allow submenu to expand on hover */
+    opacity: 1 !important; 
+}
+
+/* Restore menu-label background on hover when collapsed */
+#sidebar-content:not(.active):hover .menu-label {
+    background: linear-gradient(90deg, #007bff, #00d4ff) !important; 
+    color: #fff !important; 
+    justify-content: flex-start !important; 
+    padding: 10px 15px !important; 
+    width: calc(100% - 20px) !important; 
+    margin: 0px 10px !important; 
+    border-radius: 12px !important; 
+    gap: 10px !important; 
+}
+
+#sidebar-content:not(.active):hover .menu-label img.menu-logo {
+    width: 20px !important; 
+    height: 20px !important;
+    margin-right: 0 !important; 
+}
+
+/* Add rotation to dropdown icon when hovered over a collapsed menu item */
+#sidebar-content:not(.active):hover .menu-item.active .dropdown-icon {
+    transform: rotate(180deg) !important;
+}
+/* ******************************************************************* */
+
+/*Animation effect*/
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 992px) {
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container {
+        margin: 1rem 0;
+        max-width: 100%;
+    }
+
+    .header-menu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    body:has(#sidebar-content:not(.active):hover) .form-area {
+        margin-left: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .upload-grid,
+    .product-fields {
+        flex-direction: column;
+    }
+
+    .upload-item,
+    .product-upload {
+        width: 80px;
+        height: 80px;
+    }
+
+    .add-product-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    #sidebar-content {
+        margin-top: 20px;
+        width: 50px !important; 
+        padding: 1rem 0.5rem !important;
+    }
+
+    #sidebar-content.active {
+        width: 320px !important; 
+        padding: 1rem !important;
+    }
+
+    /* Hover adjustments for smaller screens */
+    #sidebar-content:not(.active):hover {
+        width: 220px !important; 
+        padding: 1rem !important;
+    }
+    
+    
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 0.5rem;
+    }
+
+    .logo-section {
+        margin-bottom: 0.5rem;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .header-menu {
+        gap: 0.5rem;
+    }
+
+    .upload-item,
+    .product-upload {
+        width: 60px;
+        height: 60px;
+    }
+
+    .add-product-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    #sidebar-content {
+        margin-top: 20px;
+        width: 50px !important; 
+        padding: 1rem 0.5rem !important;
+    }
+
+    #sidebar-content.active {
+        width: 320px !important; 
+        padding: 1rem !important;
+    }
+
+    /* Hover adjustments for even smaller screens */
+    #sidebar-content:not(.active):hover {
+        width: 320px !important; 
+        padding: 1rem !important;
+    }
+    /* sidebar active hide Form Area*/
+    #sidebar-content.active ~ #form-area {
+        display: none;
+    }
+
+}

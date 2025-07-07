@@ -1,0 +1,178 @@
+body {
+    background-color: #f0effe;
+  }
+  #breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+  color: white;                      /* Ensure white text */
+  font-weight: 600;
+   white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span1 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span {
+    font-size: 12px;
+  }
+}
+
+  .about-header {
+    background: url('/images/Business-cover2.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    position: relative;
+    color: white;
+  }
+
+  .about-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 60px 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 7rem;
+  }
+  
+  .about-overlay h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .about-overlay p {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  .bg-light-purple {
+    background-color: #f0effe;
+  }
+  
+  .form-input {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  select.form-select:invalid {
+    color: #5d6368;
+  }
+  
+  select.form-select option {
+    color: #212529;
+  }
+  
+  .upload-area {
+    border-radius: 8px;
+    background-color: #f7f6fd;
+    border-style: dashed !important;
+  }
+  
+  .upload-icon {
+    font-size: 28px;
+    color: #777;
+  }
+  
+  .scroll-box {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .card {
+    border-radius: 10px;
+  }
+  
+  .card-body img {
+    width: 120px;
+    height: 85x;
+  }
+
+  .custom-divider {
+    border-right: 1px solid #000000;
+  }
+  
+  .go-back-btn {
+    display: inline-block;
+    color: rgba(65,75,210,1);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 5px;
+    margin-bottom: 10px;
+     border: 1px solid rgba(65,75,210,1);;
+  }
+
+  @media (max-width: 991.98px) {
+    .custom-divider {
+      border-right: none;
+    }
+  }
+  
+
+  .upload-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    min-height: 250px;
+  }
+  
+  #file-preview img {
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  /* input.form-control:focus {
+    box-shadow: none;
+    border-color: #000;
+  } */
+
+  .btn-purp{
+    background-color: #414BD2;
+    color: #ffffff;
+    border: none;
+    height: 3.2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+    .btn-purp:hover {
+      color: #fff;
+      background: linear-gradient(90deg,rgba(65, 75, 210, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
+    }
+
+    .deadline-group .form-control {
+      height: 45px;
+      font-size: 16px;
+      border: 1px solid #ced4da;
+      border-radius: 0;
+    }
+    
+    .deadline-group .form-control:first-child {
+      border-top-left-radius: 0.75rem;
+      border-bottom-left-radius: 0.75rem;
+    }
+    
+    .deadline-group .form-control:last-child {
+      border-top-right-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+    }
+    
+    .deadline-group .form-control + .form-control {
+      margin-left: -1px;
+    }
+    
+    .deadline-group .form-control:focus {
+      box-shadow: none;
+    }
+    

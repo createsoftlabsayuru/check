@@ -1,0 +1,25 @@
+.search-bar .form-control {
+    background: rgba(255, 255, 255, 0.186);
+    border: none;
+    color: #fff;
+  }
+
+  .search-bar .form-control::placeholder {
+    color: #ccc;
+  }
+
+  .search-bar .btn {
+    background-color: #414BD2;
+    color: #fff;
+  }
+
+  .search-bar {
+    max-width: 500px;
+  }
+  .nav-link {
+    color: #fff !important;
+  }
+
+  .nav-link.underline {
+    text-decoration: underline;
+  }

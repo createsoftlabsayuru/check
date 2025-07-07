@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #e8e9ff;
+  color: #111;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  margin: 30px 0 10px;
+  border-bottom: 2px solid #2d2dc1;
+  padding-bottom: 5px;
+}
+
+/* Ads Post Grid */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.card {
+  background-size: cover;
+  background-position: center;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Trending Ads Scroll */
+.trending-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 15px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* For smooth iOS scroll */
+  }
+  
+  .trending-scroll::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on mobile */
+  }
+  
+
+  
+
+.trending-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.trending-card .image-wrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.trending-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.trending-card .price {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #ffd500;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.card-body {
+    padding: 15px 14px 15px;
+  }
+  
+  .card-body h4 {
+    margin-bottom: 6px;
+  }
+  
+
+.trending-card .days-left {
+  color: red;
+  font-size: 13px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-row p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.days-left {
+  font-size: 13px;
+  color: red;
+  white-space: nowrap;
+}
+
+/* Today Popular Ads */
+.today-popular {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.today-popular .left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 1;
+}
+
+.today-popular .left span {
+  font-size: 30px;
+}
+
+.today-popular .left p {
+  color: #666;
+  font-size: 14px;
+}
+
+.btn-submit {
+  background-color: #4b55e1;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-submit:hover {
+  background-color: #343cd4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .today-popular {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .btn-submit {
+    width: 100%;
+  }
+}

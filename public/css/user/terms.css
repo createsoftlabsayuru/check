@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #f4f4f4;
+  color: #121212;
+}
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+color: white;                      /* Ensure white text */
+font-weight: 600;
+}
+
+@media (max-width: 576px) {
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: 16px;
+}
+}
+
+.header {
+  background: linear-gradient(90deg, #3a47d5, #1f1c6c);
+  padding: 20px 30px 10px 30px;
+  color: #ffffff;
+  position: relative;
+  margin-top: 7rem;
+}
+
+.header-text{
+  margin-left: 30px;
+}
+.header-text h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.header-text p {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+  color: #dcdcdc;
+}
+
+.content-box {
+  background: #ffffff;
+  border: 1px solid #b5b5ff;
+  border-radius: 4px;
+  padding: 30px;
+  margin: -30px auto 60px auto;
+  max-width: 1300px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+.updated {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 30px;
+  color: #1a1a1a;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.back-arrow {
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 0;
+}

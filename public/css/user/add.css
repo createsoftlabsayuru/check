@@ -1,0 +1,136 @@
+body {
+    background-color: #f4f3ff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  #breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+  color: white;                      /* Ensure white text */
+  font-weight: 600;
+   white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span1 {
+    font-size: 16px;
+  }
+}
+  
+  .form-section {
+    background-color: #f4f3ff;
+    flex: 1;
+    margin-top: 7rem;
+  }
+  
+  .image-section {
+    flex: 1;
+    overflow: hidden;
+    clip-path: ellipse(100% 110% at 100% 50%);
+  }
+  
+  .object-fit-cover {
+    object-fit: cover;
+  }
+  
+  .floating-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .floating-label input,
+  .floating-label select {
+    padding: 18px 16px 8px 16px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    font-size: 15px;
+    background: none;
+    width: 100%;
+    outline: none;
+  }
+  
+  .floating-label label {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background-color: #f4f3ff;
+    padding: 0 6px;
+    font-size: 14px;
+    color: #5e5e5e;
+    transition: 0.2s;
+    pointer-events: none;
+  }
+  
+  .floating-label input:focus + label,
+  .floating-label input:not(:placeholder-shown) + label,
+  .floating-label select:valid + label {
+    top: -10px;
+    font-size: 15px;
+  }
+  
+  /* .floating-label select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  } */
+  
+  .btn-primary {
+    background-color: #5646dc;
+    border: none;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .phone-input-wrapper {
+    position: relative;
+    font-family: sans-serif;
+  }
+  
+  .phone-input-wrapper label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #f3f2fc; /* match your form background */
+    padding: 0 5px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .phone-input-box {
+    display: flex;
+    border: 1px solid #999;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 48px;
+  }
+  
+  .phone-input-box select,
+  .phone-input-box input {
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 16px;
+    height: 100%;
+    background-color: transparent;
+  }
+  
+  .phone-input-box select {
+    width: 80px;
+    border-right: 1px solid #999;
+    appearance: none;
+  }
+  .phone-input-box input {
+    flex: 1;
+  }
+  
+  .continue-btn{
+    background: rgba(65, 75, 210, 1);
+  }
+  .continue-btn:hover{
+    color: #fff;
+  background: linear-gradient(90deg,rgba(65, 75, 210, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
+  }

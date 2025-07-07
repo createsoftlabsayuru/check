@@ -1,0 +1,98 @@
+body {
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+color: white;                      /* Ensure white text */
+font-weight: 600;
+ white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: 16px;
+}
+}
+
+.form-section {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.left-panel {
+  width: 100%;
+  max-width: 750px;
+  z-index: 2;
+  background-color: #ffffff;
+  margin-top: 7rem;
+}
+
+.right-panel {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  background: url('/images/card-cover.jpg') center/cover no-repeat;
+  clip-path: ellipse(95% 110% at 100% 50%);
+}
+
+.form-control,
+.form-select {
+  border-radius: 8px;
+  padding-top: 1.25rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.95rem;
+  border: none
+}
+
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.account-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #000;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.account-overlay h5 {
+  color: #1a1a1a;
+  border-bottom: 2px solid #4a6ef0;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.upload-box {
+  background-color: #fff;
+  min-height: 160px;
+}
+
+#file-preview img {
+  max-height: 140px;
+  object-fit: contain;
+}
+
+input.form-control:focus {
+  box-shadow: none;
+  border-color: #000;
+}
+
+.btn-submit{
+  background-color: rgba(255,244,29,1);
+  transition: background-color 0.3s ease;
+}
+.btn-submit:hover{
+  color: #fff;
+background: linear-gradient(90deg,rgba(65, 75, 210, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
+}

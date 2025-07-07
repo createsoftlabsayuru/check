@@ -1,0 +1,91 @@
+body {
+    background: #E9E9FF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.custom-hr {
+    border: none;
+    height: 2px;
+    background-color: #414BD2;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.tender-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+.company-logo {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 60px;
+    height: auto;
+}
+
+.action-icons {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: #414BD2;
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.detail-card {
+    height: 665px;
+    border: 2px solid #414BD2;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.76)), url('background.jpg') center/cover;
+    position: relative;
+}
+.tender-card .budget {
+    color: #E5322D;
+}
+
+.company-logo-detail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #E6E6FA;
+    position: absolute;
+    top: -40px;
+    left: 30px;
+    background-color: white;
+}
+
+.detail-card .description {
+    font-size: 16px;
+    color: #000;
+    line-height: 1.5;
+}
+
+.detail-card .deadline,
+.detail-card .budget,
+.detail-card .email,
+.detail-card .document-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.detail-card .budget {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #E5322D;
+}
+
+.action-icons-detail {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #414BD2;
+}

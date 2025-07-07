@@ -1,0 +1,255 @@
+body {
+  background-color: #eae6fc;
+}
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+color: white;                      /* Ensure white text */
+font-weight: 600;
+ white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: 14px;
+}
+}
+@media (max-width: 576px) {
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span {
+  font-size: 12px;
+}
+}
+.about-header {
+  background: url('/images/promo.jpg') no-repeat center center/cover;
+  height: 80vh;
+  position: relative;
+  color: white;
+}
+
+.about-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 60px 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.about-overlay h2 {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.promo-text-container {
+  position: absolute;
+  top: 60%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 280px;
+  width: 100%;
+  z-index: 2;
+}
+
+.promo-text {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: black;
+}
+
+@media (max-width: 992px) {
+  .promo-text-container {
+    top: 60%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    max-width: 220px;
+    padding: 0 15px;
+  }
+
+  .promo-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .promo-text-container {
+    top: 60%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    max-width: 180px;
+  }
+
+  .promo-text {
+    font-size: 1.4rem;
+  }
+}
+
+
+.bg-light-purple {
+  background-color: #eae6fc;
+}
+
+.payment-icon-box {
+  background-color: #eae6fc;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;  
+  height: 60px;  
+  box-sizing: border-box;
+}
+
+.payment-icon-box i {
+  font-size: 30px; 
+  line-height: 1;
+}
+
+.card-icons img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+@media (max-width: 768px) {
+  .d-flex.justify-content-center.gap-3.mb-4 {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .payment-icon-box {
+    width: 70px;
+    height: 55px;
+  }
+
+  .payment-icon-box i {
+    font-size: 24px;
+  }
+}
+
+
+
+.plan-card {
+  width: 400px;
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 30px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid var(--header-color);
+  background-color: #f0effe;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.plan-card:hover,
+.plan-card.selected {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.plan-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  width: 150px;
+  color: #fff;
+  font-weight: 600;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: var(--header-color);
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.plan-features {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 0px 20px;
+}
+
+.plan-features div {
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #5a5a5a;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.btn-select {
+  align-self: flex-end;
+  border-radius: 0px;
+  padding: 12px 40px;
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  font-weight: bold;
+  color: white;
+  border: none;
+}
+
+ 
+
+/* .plan-body {
+  padding: 20px 10px;
+}
+ */
+/* .btn-select {
+  border-radius: 25px;
+  padding: 8px 30px;
+  font-weight: bold;
+} */
+
+
+.plan-tabs {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-options {
+  background: white;
+  padding: 5px;
+  border-radius: 12px;
+  display: inline-flex;
+  gap: 5px;
+  box-shadow: 0 0 0 1px #ddd;
+}
+
+.tab-btn {
+  border: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  color: #222;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background-color: #434ce8;
+  color: white;
+}
+
+/* Make plan header and select button text black for yellow plan */
+.yellow-plan .plan-header,
+.yellow-plan .btn-select {
+color: black !important;
+}

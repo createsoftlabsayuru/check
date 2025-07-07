@@ -1,0 +1,75 @@
+body{
+  background-color: rgba(230,230,250,1);
+}
+
+#breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+  color: white;                      /* Ensure white text */
+  font-weight: 600;
+   white-space: nowrap;
+}
+.btn-job-details{
+  background-color: rgba(65,75,210,1);
+  transition: background-color 0.3s ease;
+}
+.btn-job-details:hover{
+  color: #fff;
+background: linear-gradient(90deg,rgba(65, 75, 210, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(0, 212, 255, 1) 100%);
+}
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span1 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span {
+    font-size: 12px;
+  }
+}
+
+
+
+
+.go-back-btn {
+  display: inline-block;
+  color: rgba(65,75,210,1);
+  text-decoration: none;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-left: 5px;
+  margin-bottom: 10px;
+   border: 1px solid rgba(65,75,210,1);;
+}
+
+/*Pagination*/
+.custom-pagination .page-item .page-link {
+    background-color: #434bda;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 0;
+    margin: 0 5px;
+  }
+
+  .custom-pagination .page-item.active .page-link {
+    background-color: #333dc2;
+    font-weight: bold;
+  }
+
+  .custom-pagination .page-item .page-link:hover {
+    background-color: #333dc2;
+  }
+  /**/

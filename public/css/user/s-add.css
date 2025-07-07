@@ -1,0 +1,254 @@
+body {
+    background-color: #eae8fb;
+  }
+  #breadcrumb-main-page,
+#breadcrumb-page,
+.d-flex.align-items-center span1 {
+  font-size: clamp(16px, 2vw, 22px); /* Responsive between 16px–22px */
+  color: white;                      /* Ensure white text */
+  font-weight: 600;
+   white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span1 {
+    font-size: 12px;
+    
+  }
+}
+@media (max-width: 576px) {
+  #breadcrumb-main-page,
+  #breadcrumb-page,
+  .d-flex.align-items-center span {
+    font-size: 12px;
+  }
+}
+
+
+  .about-header {
+    background: url('/images/Business-cover2.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    position: relative;
+    color: #fff;
+  }
+  
+  .about-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 60px 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 7rem;
+  }
+  
+  .about-overlay h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  
+  .about-overlay p {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  
+  .search-bar {
+    max-width: 700px;
+    width: 100%;
+  }
+  
+  .search-input-wrapper {
+    border-radius: 40px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .search-input {
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 40px 0 0 40px;
+    outline: none;
+  }
+  
+  .search-btn {
+    background-color: #6259d4;
+    color: white;
+    padding: 0 20px;
+    border: none;
+    border-radius: 0 40px 40px 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-btn:hover {
+    background-color: #4f47b0;
+  }
+  
+  
+  .filter-bar select.custom-select-sm {
+    background-color: #eae8fb;
+    border: 1px solid #5e5a89;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    padding: 5px 12px;
+    color: #000;
+    min-width: 150px;
+  }
+  
+  .filter-bar .custom-btn-sm {
+    background-color: #6259d4;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border: none;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .filter-bar .custom-btn-sm:hover {
+    background-color: #4f47b0;
+  }
+
+  .btn-primary {
+    background-color: #5646dc;
+    border: none;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+    .btn-primary:hover {
+        background-color: #4538b3;
+    }
+  
+.business-card {
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.07);
+    font-family: 'Inter', sans-serif;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .business-card img {
+    width: 120px;
+    height: 85px;
+    object-fit: contain;
+  }
+  
+  .time-badge {
+    background-color: #e4e0ff;
+    color: #6259d4;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+  
+  .desc-text {
+    font-size: 0.95rem;
+    color: #000;
+    line-height: 1.6;
+  }
+  
+  .price-text {
+    color: #e32b2b;
+    font-weight: 700;
+  }
+  
+  .business-card p,
+  .business-card span,
+  .business-card div {
+    font-size: 0.95rem;
+  }
+  
+  .business-card i {
+    cursor: pointer;
+  }
+  
+.custom-pagination .page-link {
+    background-color: transparent;
+    color: #6259d4;
+    border: 2px solid #6259d4;
+    margin: 0 12px;
+    width: 40px;
+    height: 40px;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 1;
+    font-size: 1rem;
+    border-radius: 50%;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .custom-pagination .page-item.active .page-link {
+    background-color: #6259d4;
+    color: #fff;
+  }
+  
+  .custom-pagination .page-link:hover {
+    background-color: #e7e3ff;
+    color: #6259d4;
+  }
+  
+  .custom-pagination .page-item.disabled .page-link {
+    border-color: transparent;
+    color: #aaa;
+    cursor: default;
+  }
+
+.bottom-image-cropped {
+    width: 100%;
+    max-width: auto;
+    height: 180px; 
+    object-fit: cover;
+    object-position: top;
+    object-position: center 50%;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  .go-back-btn {
+    display: inline-block;
+    color: rgba(65,75,210,1);
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 5px;
+    margin-bottom: 10px;
+     border: 1px solid rgba(65,75,210,1);;
+  }
+  
+  @media (max-width: 576px) {
+    .business-card {
+      padding: 1.5rem 1.25rem;
+    }
+  
+    .business-card img {
+      width: 100px;
+      height: 70px;
+    }
+  
+    .desc-text,
+    .business-card p,
+    .business-card span {
+      font-size: 0.9rem;
+    }
+  
+    .price-text {
+      font-size: 1rem;
+    }
+  
+    .business-card i {
+      font-size: 1.1rem;
+    }
+  }
+  

@@ -1,0 +1,144 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-padding-top: 4rem;
+  scroll-behavior: smooth;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  background-color: var(--bg-color); 
+}
+
+html, body {
+  overflow-x: hidden;
+}
+section{
+  margin: 0;
+}
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(40, 40, 90, 0.7);
+  transition: right 0.3s ease-in-out;
+  z-index: 9999;
+  overflow: auto;
+}
+
+/* Show sidebar when menu-toggle is checked */
+#menu-toggle:checked ~ #sidebar .side-menu {
+  right: 0;
+}
+
+  
+  /* Style menu icon */
+  .menu-icon-wrapper {
+    padding: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1060;
+    background-color: transparent;
+  }
+  
+  
+.modal-content {
+    background: rgba(40, 40, 90, 0.7);
+    backdrop-filter: blur(12px);
+  }
+  
+  .btn-close-white {
+    filter: brightness(0) invert(1);
+  }
+  .links-and-buttons{
+    display: flex;
+     align-items:center ;
+     gap: 30px;
+}
+ 
+/*============ ====================*/
+.custom-radio-group .form-check-label {
+    color: rgba(0, 0, 0, 1); /* Strong dark label */
+    font-weight: bold;
+  }
+  
+  .custom-radio {
+    accent-color: rgba(0, 0, 0, 1); /* Makes radio dot black */
+    background-color: rgba(40, 40, 90, 0.7); /* Form background */
+    border: 2px solid rgba(0, 0, 0, 1); /* Dark border */
+  }
+
+  .form-control.bg-form {
+    background-color: rgba(40, 40, 90, 0.7) !important;
+    border: 1px solid white !important;
+    color: white !important;
+  }
+
+  .form-floating > label {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  @media(min-width:1024px){
+    .popular-title-wrapper {
+        top: 50px; /* Slightly less for smaller screens if needed */
+      }
+    
+   
+    
+}
+@media(max-width:1024px){
+    .side-menu {
+        width: 50%;
+        text-decoration: none;
+      }
+    
+      .links-and-buttons{
+       
+         gap: 20px;
+    }
+}
+@media(max-width:991px){
+   
+  .menu-icon-wrapper {
+    position: fixed;
+    top: auto;
+    right: 0px;
+  }
+    .links-and-buttons{
+        display: none;
+    }
+   
+   
+    footer{
+        margin-top: 40px;
+    }
+    
+}
+@media(max-width:768px){
+    .side-menu {
+        width: 50%;
+      }
+   
+   
+    
+}
+@media (min-width: 550px) {
+    .custom-modal-width {
+      width: 90% !important;
+      max-width: 90% !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+  
+  
+@media(max-width:550px){
+    .side-menu {
+        width: 100%;
+      }
+}
+

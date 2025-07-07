@@ -1,0 +1,267 @@
+        :root {
+            --primary-blue: #4f46e5;
+            --dark-blue: #3730a3;
+            --light-purple: #e0e7ff;
+            --yellow-accent: #ffd60a;
+            --gray-bg: #f8fafc;
+        }
+
+        body {
+            background-color: var(--gray-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .content-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .listing-details-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .listing-header {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.8), rgba(55, 48, 163, 0.8)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 2rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .company-info h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .company-category {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .listing-content {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section h3 {
+            color: #1f2937;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--light-purple);
+            padding-bottom: 0.5rem;
+        }
+
+        .description-text {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .offered-images {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .offered-image {
+            width: 60px;
+            height: 60px;
+            background: #f3f4f6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .offered-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-areas {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service-tag {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .company-offers {
+            background: var(--light-purple);
+            padding: 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .offer-icon {
+            width: 60px;
+            height: 60px;
+            background: #333;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .offer-content h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .offer-content p {
+            margin: 0.25rem 0 0 0;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .video-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .video-link:hover {
+            text-decoration: underline;
+        }
+
+        .action-buttons-footer {
+            background: var(--primary-blue);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn-reject {
+            background: #6b7280;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-approve {
+            background: var(--yellow-accent);
+            color: #333;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-reject:hover {
+            background: #4b5563;
+        }
+
+        .btn-approve:hover {
+            background: #ffed4e;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container-wrapper {
+                padding: 1rem;
+            }
+
+            .listing-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .action-buttons-footer {
+                flex-direction: column;
+            }
+
+            .company-offers {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container-wrapper {
+                padding: 0.5rem;
+            }
+
+            .listing-content {
+                padding: 1rem;
+            }
+
+            .action-buttons-footer {
+                padding: 1rem;
+            }
+        }
